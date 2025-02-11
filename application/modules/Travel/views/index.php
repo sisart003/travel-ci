@@ -16,6 +16,15 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <title>Travel Agency - Bootstrap 4 Admin Dashboard Template</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        .table-wrap{
+            height: 575px;
+            overflow-y: scroll;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,12 +36,26 @@
         <!-- navbar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="index.html">Travel Agency</a>
+        <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="../index.html">Travel Agency</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">John Abraham</h5>
+                                    <span class="status"></span><span class="ml-2">Available</span>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
         <!-- ============================================================== -->
@@ -54,80 +77,19 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
-                                <div id="submenu-1" class="collapse submenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">E-Commerce</a>
-                                            <div id="submenu-1-2" class="collapse submenu">
-                                                <ul class="nav flex-column">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="index.html">E Commerce Dashboard</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="ecommerce-product.html">Product List</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="ecommerce-product-single.html">Product Single</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="ecommerce-product-checkout.html">Product Checkout</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-finance.html">Finance</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-sales.html">Sales</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Infulencer</a>
-                                            <div id="submenu-1-1" class="collapse submenu">
-                                                <ul class="nav flex-column">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="dashboard-influencer.html">Influencer</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="influencer-finder.html">Influencer Finder</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="influencer-profile.html">Influencer Profile</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <a class="nav-link active" href="#" ><i class="fa fa-fw fa-user-circle"></i>Users</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>UI Elements</a>
-                                <div id="submenu-2" class="collapse submenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>travel/pages/cards.html">Cards <span class="badge badge-secondary">New</span></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>pages/general.html">General</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>pages/carousel.html">Carousel</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>pages/listgroup.html">List Group</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>pages/typography.html">Typography</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>pages/accordions.html">Accordions</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo base_url(); ?>pages/tabs.html">Tabs</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#" ><i class="fas fa-clipboard-list"></i>Categories</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#" ><i class="fas fa-list-alt"></i>Sub-Categories</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#" ><i class=" fas fa-box"></i>Package</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#" ><i class="fas fa-hand-paper"></i>Inquiry</a>
                             </li>
                         </ul>
                     </div>
@@ -143,32 +105,207 @@
         <div class="dashboard-wrapper">
             <div class="dashboard-ecommerce">
                 <div class="container-fluid dashboard-content ">
-                    <!-- Button trigger modal -->
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Launch demo modal
-                    </button>
+                    
 
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">User Form</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <div class="row">
+                                    <!-- ============================================================== -->
+                                    <!-- basic form -->
+                                    <!-- ============================================================== -->
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <form action="#" id="basicform" data-parsley-validate="" enctype="multipart/form-data">
+                                                    <div class="form-group">
+                                                        <label for="inputFirstname">First Name</label>
+                                                        <input id="inputFirstname" type="text" name="fname" data-parsley-trigger="change" required="" placeholder="Enter your first name" autocomplete="off" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="inputLastName">Last Name</label>
+                                                        <input id="inputLastName" type="text" name="lname" data-parsley-trigger="change" required="" placeholder="Enter you last name" autocomplete="off" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="inputUserName">Username</label>
+                                                        <input id="inputUserName" type="text" name="username" data-parsley-trigger="change" required="" placeholder="Enter you username" autocomplete="off" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="inputEmail">Email</label>
+                                                        <input id="inputEmail" type="email" name="email" data-parsley-trigger="change" required="" placeholder="Enter your email" autocomplete="off" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="inputPassword">Password</label>
+                                                        <input id="inputPassword" type="password" name="password" data-parsley-trigger="change" required="" placeholder="Enter your password" autocomplete="off" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="inputConfirmPassword">Confirm Password</label>
+                                                        <input id="inputConfirmPassword" type="password" name="password2" data-parsley-trigger="change" required="" placeholder="Confirm your password" autocomplete="off" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="inputMobile">Phone</label>
+                                                        <input id="inputMobile" type="number" name="phone" data-parsley-trigger="change" required="" placeholder="Enter your mobile" autocomplete="off" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="inputUserName">Birthday</label>
+                                                        <input id="inputUserName" type="date" name="birthday" data-parsley-trigger="change" required="" placeholder="Enter your birthday" autocomplete="off" class="form-control">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="inputUserName">Upload Photo</label>
+                                                        <input id="inputUserName" type="file" name="photo" data-parsley-trigger="change" required="" placeholder="Upload your photo" autocomplete="off" class="form-control">
+                                                    </div>
+
+                                                    <div class="row my-4">
+                                                        <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
+                                                            <label class="be-checkbox custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Remember me</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-6 pl-0">
+                                                            <p class="text-right">
+                                                                <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                                                <button class="btn btn-space btn-secondary">Cancel</button>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                    </div>
+                                </div>
                             </div>
                             </div>
                         </div>
                     </div>
+                    <!-- ============================================================== -->
+                        <!-- hoverable table -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <i class="fas fa-plus"></i> Create New User
+                            </button>
+                            <br><br>
+                            <div class="card">
+                                <h5 class="card-header">User Table </h5>                                 
+                                <div class="card-body table-wrap">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Profile</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Username</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Type of User</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>
+                                                    <img src="https://i.pinimg.com/736x/59/19/37/591937e67896b1c2d5091bdbadb454ab.jpg" alt="" class="img-thumbnail" style="height: 128px; width: 128px;">
+                                                </td>
+                                                <td>Chrishart Estrada</td>
+                                                <td>sisart003</td>
+                                                <td>sisart003@gmail.com</td>
+                                                <td>Admin</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-dark"><i class="fas fa-pencil-alt"></i> Edit</a>
+                                                    <a href="#" class="btn btn-light"> <i class="fas fa-trash"></i> Delete</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                            <th scope="row">1</th>
+                                                <td>
+                                                    <img src="https://i.pinimg.com/736x/bd/3f/0b/bd3f0be69ba16dccf908c39ea24fbf1b.jpg" alt="" class="img-thumbnail" style="height: 128px; width: 128px;">
+                                                </td>
+                                                <td>Chrishart Estrada</td>
+                                                <td>sisart003</td>
+                                                <td>sisart003@gmail.com</td>
+                                                <td>Admin</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-dark"><i class="fas fa-pencil-alt"></i> Edit</a>
+                                                    <a href="#" class="btn btn-light"> <i class="fas fa-trash"></i> Delete</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>
+                                                    <img src="https://i.pinimg.com/736x/72/ce/42/72ce425218439871fa9d4cf52fa634b7.jpg" alt="" class="img-thumbnail" style="height: 128px; width: 128px;">
+                                                </td>
+                                                <td>Chrishart Estrada</td>
+                                                <td>sisart003</td>
+                                                <td>sisart003@gmail.com</td>
+                                                <td>Admin</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-dark"><i class="fas fa-pencil-alt"></i> Edit</a>
+                                                    <a href="#" class="btn btn-light"> <i class="fas fa-trash"></i> Delete</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>
+                                                    <img src="https://i.pinimg.com/736x/49/30/d3/4930d341c20c71dffa67443ddfca09cb.jpg" alt="" class="img-thumbnail" style="height: 128px; width: 128px;">
+                                                </td>
+                                                <td>Chrishart Estrada</td>
+                                                <td>sisart003</td>
+                                                <td>sisart003@gmail.com</td>
+                                                <td>Admin</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-dark"><i class="fas fa-pencil-alt"></i> Edit</a>
+                                                    <a href="#" class="btn btn-light"> <i class="fas fa-trash"></i> Delete</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>
+                                                    <img src="https://i.pinimg.com/736x/5d/d1/b2/5dd1b218ae6ca1492c3e773224c117d4.jpg" alt="" class="img-thumbnail" style="height: 128px; width: 128px;">
+                                                </td>
+                                                <td>Chrishart Estrada</td>
+                                                <td>sisart003</td>
+                                                <td>sisart003@gmail.com</td>
+                                                <td>Admin</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-dark"><i class="fas fa-pencil-alt"></i> Edit</a>
+                                                    <a href="#" class="btn btn-light"> <i class="fas fa-trash"></i> Delete</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>
+                                                    <img src="https://i.pinimg.com/736x/48/c3/36/48c33662ba4c23373a4d6c8d1f764499.jpg" alt="" class="img-thumbnail" style="height: 128px; width: 128px;">
+                                                </td>
+                                                <td>Chrishart Estrada</td>
+                                                <td>sisart003</td>
+                                                <td>sisart003@gmail.com</td>
+                                                <td>Admin</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-dark"><i class="fas fa-pencil-alt"></i> Edit</a>
+                                                    <a href="#" class="btn btn-light"> <i class="fas fa-trash"></i> Delete</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end hoverable table -->
+                        <!-- ============================================================== -->
                 </div>
             </div>
             <!-- ============================================================== -->
