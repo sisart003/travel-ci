@@ -54,4 +54,13 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
-$route['travel'] = 'travel/index';
+$route['users'] = 'users/index';
+$route['users/create'] = 'users/create';
+$route['users/edit/(:num)'] = 'users/edit/$1';
+$route['users/delete/(:num)'] = 'users/delete/$1';
+
+$route['login'] = 'auth/index';
+$route['auth/login'] = 'auth/login';
+$route['logout'] = 'auth/logout';
+
+$route['dashboard'] = 'dashboard/index';
