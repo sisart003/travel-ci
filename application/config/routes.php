@@ -49,18 +49,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
-$route['users'] = 'users/index';
-$route['users/create'] = 'users/create';
-$route['users/edit/(:num)'] = 'users/edit/$1';
-$route['users/delete/(:num)'] = 'users/delete/$1';
+// $route['users'] = 'users/index';
+// $route['users/create'] = 'users/create';
+// $route['users/edit/(:num)'] = 'users/edit/$1';
+// $route['users/delete/(:num)'] = 'users/delete/$1';
 
-$route['login'] = 'auth/index';
-$route['auth/login'] = 'auth/login';
-$route['logout'] = 'auth/logout';
+// $route['login'] = 'auth/index';
+// $route['auth/login'] = 'auth/login';
+// $route['logout'] = 'auth/logout';
 
+// $route['dashboard'] = 'dashboard/index';
+
+
+
+
+// Authentication Routes
+$route['login'] = 'auth/index';      // Show login page
+$route['logout'] = 'auth/logout';    // Logout user
+$route['register'] = 'auth/register'; // Show registration page
+
+// Dashboard Route (Only for logged-in users)
 $route['dashboard'] = 'dashboard/index';
+$route['auth/get_user/(:num)'] = 'auth/get_user/$1';
+$route['auth/update_user_ajax'] = 'auth/update_user_ajax';
+$route['auth/delete/(:num)'] = 'auth/delete/$1';
