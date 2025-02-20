@@ -151,6 +151,42 @@ class Auth extends MX_Controller {
 
         
     }
+
+
+    public function add_user()
+    {
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('dashboard/dashboard_view');
+        } else{
+            $config['upload_path'] = './assets/uploads/users/';
+            $config['allowed_types'] = 'jpg|jpeg|png';
+            $config['max_size'] = 2048;
+            $config['file_name'] = time() . '_' . $_FILES['image']['name'];
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('image')) {
+                $uploadData = $this->upload->data();
+                $image = $uploadData['file_name'];
+            } else {
+                $image = 'default.jpg'; // Default if no image uploaded
+            }
+    
+            $data = [
+                'email' => $this->input->post('email'),
+                'password' => md5($this->input->post('password')),
+                'image' => $image
+            ];
+    
+            $this->db->insert('uusers', $data);
+            echo json_encode(['status' => 'success']);
+        }
+
+        
+    }
     
     
 }
